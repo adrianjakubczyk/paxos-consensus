@@ -1,20 +1,14 @@
-package com.simplemethod.sobn_v2.model;
+package pl.kielce.tu.sonb.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class AcceptorResponseModel {
-    private Boolean requestAccepted;
+    private boolean requestAccepted;
     private String currentProblem;
     private List<String> currentProblemVotes;
-    private Integer currentSequenceNumber;
-    private Integer currentFault;
+    private int currentSequenceNumber;
+    private int currentFault;
 }

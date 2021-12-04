@@ -1,27 +1,15 @@
-package com.simplemethod.sobn_v2.model;
+package pl.kielce.tu.sonb.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class ClientModel {
-
     public static String DEFAULT_PROBLEM_DISPLAY_NAME = "No problem has ben specified by a leader";
 
-
-    private Boolean isLeader;   //TODO MM: Determines visibility of "New Problem" form, and visibility of dropdown for acceptor error enable
-
-    private Integer sequenceNumber;
-
+    private boolean isLeader;
+    private int sequenceNumber;
     private String currentProblemName;
-
     private List<String> currentProblemVotes;
-
 }

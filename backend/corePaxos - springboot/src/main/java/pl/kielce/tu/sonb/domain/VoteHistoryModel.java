@@ -1,30 +1,13 @@
-package com.simplemethod.sobn_v2.model;
+package pl.kielce.tu.sonb.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonPropertyOrder({
-        "currentProblem",
-        "currentProblemVotes",
-        "finalVoteOfAcceptors"
-})
-@Getter
-@Setter
-@Resource
+@Data
 public class VoteHistoryModel {
-
-    String currentProblem;
-    List<String> currentProblemVotes = new ArrayList<>();
-    String finalVoteOfAcceptors;
-
-    public VoteHistoryModel() {
-        super();
-    }
-
+  private String currentProblem;
+  private String finalVoteOfAcceptors;
+  private List<String> currentProblemVotes = new ArrayList<>();
 }

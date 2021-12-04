@@ -1,9 +1,9 @@
-package com.simplemethod.sobn_v2.model;
+package pl.kielce.tu.sonb.domain;
 
+import lombok.Data;
+
+@Data
 public class AcceptorStateSimplifiedModel {
-
-    private Integer currentError;    //Null = status ok, and no error. Value = status "X", and error
-
-    private Integer currentSequenceNumber = 1;
-
+    private int currentError;
+    private int currentSequenceNumber = 1;
 }

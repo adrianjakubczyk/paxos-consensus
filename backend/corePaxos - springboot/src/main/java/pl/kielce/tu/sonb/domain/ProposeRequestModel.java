@@ -1,18 +1,9 @@
-package com.simplemethod.sobn_v2.model;
+package pl.kielce.tu.sonb.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class ProposeRequestModel {
-
     private String message;
-
-    private Integer sequenceNumber;
-
+    private int sequenceNumber;
 }
