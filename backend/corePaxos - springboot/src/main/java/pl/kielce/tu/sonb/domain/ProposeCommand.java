@@ -4,7 +4,7 @@ import lombok.*;
 
 
 @AllArgsConstructor
-public class ProposeRequestModel {
+public class ProposeCommand {
     private String message;
     private Integer sequenceNumber;
 }

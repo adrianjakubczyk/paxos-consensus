@@ -10,19 +10,18 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class AcceptorModel {
+public class AcceptorDTO {
 
     private Integer currentError=0;
     private Integer currentSequenceNumber = 1;
-    private List<VotingSession> votingSessions = new ArrayList<>();
-
+    private List<VotingSessionDTO> votingSessionDTOS = new ArrayList<>();
     private String stagingArea="";
 
-    public VotingSession getCurrentVotingSession() {
-        return votingSessions.isEmpty() ? null : votingSessions.get(votingSessions.size() - 1);
+    public VotingSessionDTO getCurrentVotingSession() {
+        return votingSessionDTOS.isEmpty() ? null : votingSessionDTOS.get(votingSessionDTOS.size() - 1);
     }
 
-    public AcceptorModel() {
+    public AcceptorDTO() {
         super();
     }
 }

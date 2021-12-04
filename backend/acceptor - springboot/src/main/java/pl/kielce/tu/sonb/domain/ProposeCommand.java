@@ -9,10 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProposeRequestModel {
-
+public class ProposeCommand {
     private String message;
-
     private Integer sequenceNumber;
-
 }

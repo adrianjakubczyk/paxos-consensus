@@ -5,14 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VotingSession {
+public class VoteHistoryDTO {
+
     private String currentProblem;
-    private final List<String> votes = new ArrayList<>();
+    private List<String> currentProblemVotes;
+    private String finalVoteOfAcceptors;
 }

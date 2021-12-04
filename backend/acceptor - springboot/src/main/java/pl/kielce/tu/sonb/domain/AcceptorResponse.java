@@ -11,9 +11,10 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VoteHistoryModel {
-
+public class AcceptorResponse {
+    private Boolean requestAccepted;
     private String currentProblem;
     private List<String> currentProblemVotes;
-    private String finalVoteOfAcceptors;
+    private Integer currentSequenceNumber;
+    private Integer currentFault;
 }

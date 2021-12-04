@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.List;
 
 @Data
-public class AcceptorResponseModel {
+public class AcceptorDTO {
     private Boolean requestAccepted;
     private String currentProblem;
     private List<String> currentProblemVotes;

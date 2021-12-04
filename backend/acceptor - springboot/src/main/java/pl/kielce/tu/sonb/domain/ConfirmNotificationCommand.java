@@ -9,10 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AcceptedNotificationModel {
-
+public class ConfirmNotificationCommand {
     private Integer newSequenceId;
-
     private String acceptedValue;
-
 }
