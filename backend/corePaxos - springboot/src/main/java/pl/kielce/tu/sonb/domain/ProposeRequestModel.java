@@ -2,8 +2,9 @@ package pl.kielce.tu.sonb.domain;
 
 import lombok.*;
 
-@Data
+
+@AllArgsConstructor
 public class ProposeRequestModel {
     private String message;
-    private int sequenceNumber;
+    private Integer sequenceNumber;
 }
