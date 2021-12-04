@@ -1,4 +1,4 @@
-package pl.kielce.tu.sonb.sonb;
+package pl.kielce.tu.sonb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
