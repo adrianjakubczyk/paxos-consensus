@@ -1,24 +1,24 @@
-package pl.kielce.tu.sonb.controller;
+package pl.kielce.tu.sonb.sonb.controller;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.kielce.tu.sonb.domain.VoteHistoryModel;
-import pl.kielce.tu.sonb.service.CommunicationService;
+import pl.kielce.tu.sonb.sonb.domain.share.VoteHistoryDTO;
+import pl.kielce.tu.sonb.sonb.service.CommunicationService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/proposer")
 @RequiredArgsConstructor
-@AllArgsConstructor
 public class ProposerLocalController {
-  private final CommunicationService communicationService;
+  @Autowired
+  private CommunicationService communicationService;
 
   @GetMapping("/vote-history")
-  public List<VoteHistoryModel> getVoteHistory() {
+  public List<VoteHistoryDTO> getVoteHistory() {
     return communicationService.readHistory();
   }
 

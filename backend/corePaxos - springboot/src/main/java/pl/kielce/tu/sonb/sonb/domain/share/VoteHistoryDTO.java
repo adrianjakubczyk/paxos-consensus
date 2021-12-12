@@ -1,4 +1,4 @@
-package pl.kielce.tu.sonb.domain;
+package pl.kielce.tu.sonb.sonb.domain.share;
 
 import lombok.Data;
 

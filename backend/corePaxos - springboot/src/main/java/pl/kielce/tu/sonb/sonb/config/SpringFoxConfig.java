@@ -1,4 +1,4 @@
-package pl.kielce.tu.sonb.config;
+package pl.kielce.tu.sonb.sonb.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
