@@ -1,13 +1,13 @@
-package pl.kielce.tu.sonb.sonb;
+package com.psk.paxos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SonbApplication {
+public class PaxosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SonbApplication.class, args);
+		SpringApplication.run(PaxosApplication.class, args);
 	}
 
 }
