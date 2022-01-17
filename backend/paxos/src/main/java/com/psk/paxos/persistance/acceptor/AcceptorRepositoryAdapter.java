@@ -37,6 +37,6 @@ public class AcceptorRepositoryAdapter implements AcceptorRepositoryPort {
   }
 
   Collection<Acceptor> fetchData() {
-    return Arrays.asList(Acceptor.builder().acceptorId(0).build(), Acceptor.builder().acceptorId(1).build(), Acceptor.builder().acceptorId(2).build());
+    return Arrays.asList(Acceptor.createInstance(0), Acceptor.createInstance(1), Acceptor.createInstance(2));
   }
 }

@@ -10,5 +10,5 @@ import java.util.Collection;
 @Builder
 public class VoteSession {
   private String currentProblem;
-  private final Collection<String> votes = new ArrayList<>();
+  private Collection<String> votes;
 }
