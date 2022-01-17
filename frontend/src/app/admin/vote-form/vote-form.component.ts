@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vote-form.component.scss']
 })
 export class VoteFormComponent implements OnInit {
-
+  voteName: string = '';
+  voteClientId: string = '';
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log('weszlo')
   }
 
 }

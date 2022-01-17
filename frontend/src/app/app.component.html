@@ -1,4 +1,6 @@
 <div class="switcher" (click)="switch()">{{switcherText}}</div>
 <app-navbar *ngIf="switcherText == 'Admin'" [menuItems]="menuAdminItems"></app-navbar>
 <app-navbar *ngIf="switcherText == 'Klient'" [menuItems]="menuClientItems"></app-navbar>
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

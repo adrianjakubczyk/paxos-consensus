@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { VoteFormComponent } from './vote-form/vote-form.component';
 import { AcceptorListComponent } from './acceptor-list/acceptor-list.component';
 import { VoteHistoryListComponent } from './vote-history-list/vote-history-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { VoteHistoryListComponent } from './vote-history-list/vote-history-list.
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

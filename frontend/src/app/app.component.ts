@@ -9,14 +9,14 @@ export class AppComponent {
   switcherText = "Admin";
   menuAdminItems: { label: string, link: string }[] = [
     { label: 'Nowe glosowanie', link: 'new-voting' },
-    { label: 'Historia głosowania', link: 'vote-history' },
     { label: 'Lista acceptorow', link: '' },
+    { label: 'Historia głosowania', link: 'vote-history' }
   ]
 
   menuClientItems: { label: string, link: string }[] = [
     { label: 'Oddaj głos', link: 'client/add-vote' },
-    { label: 'Historia głosowania', link: 'vote-history' },
     { label: 'Status acceptorow', link: 'client/acceptor-statuses' },
+    { label: 'Historia głosowania', link: 'vote-history' }
   ]
 
   switch() {
