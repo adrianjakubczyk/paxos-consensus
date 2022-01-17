@@ -1,0 +1,27 @@
+
+.menu-container {
+    width: calc(100% - 150px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .menu-item{
+        width: 33%;
+        background-color: rgb(131, 131, 224);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        font-size: 32px;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        transition-duration: 400ms;
+        &:hover{
+            background-color: rgb(85, 85, 151);
+            cursor: pointer;
+            transition-duration: 0ms;
+        }
+    }
+}
+
