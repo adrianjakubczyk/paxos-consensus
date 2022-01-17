@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-vote-form',
@@ -8,13 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class VoteFormComponent implements OnInit {
   voteName: string = '';
   voteClientId: string = '';
-  constructor() { }
+  constructor(
+    private adminService: AdminService
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log('weszlo')
+    console.log('weszlo');
+    this.adminService.startNewVoting(this.voteName, this.voteClientId).subscribe();
   }
 
 }
