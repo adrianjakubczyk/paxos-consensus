@@ -1,0 +1,5 @@
+<nav class="menu-container">
+    <ng-container *ngFor="let item of menuItems">
+        <div class="menu-item" (click)="goTo(item.link)">{{item.label}}</div>
+    </ng-container>
+</nav>
