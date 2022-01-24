@@ -41,7 +41,7 @@ public class AcceptorCommunicationAdapter implements AcceptorCommunicationPort {
   public List<AcceptorResponse> findAcceptors() {
    return AcceptorIdsProvider.findAcceptorIds()
             .stream()
-            .map(this::createAcceptorResponseInstance)
+            .map(this::findAcceptorResponseById)
             .collect(Collectors.toList());
   }
 
@@ -50,8 +50,8 @@ public class AcceptorCommunicationAdapter implements AcceptorCommunicationPort {
     acceptorFlowPort.acceptNewVote(acceptorId, sequenceNumber,voteName);
   }
 
-
-  private AcceptorResponse createAcceptorResponseInstance(Integer acceptorId) {
+  @Override
+  public AcceptorResponse findAcceptorResponseById(Integer acceptorId) {
     Acceptor acceptor = acceptorRepositoryPort.findById(acceptorId);
     acceptorSequenceProvider.setPreviousSeq(acceptor.getCurrentSequenceNumber());
 

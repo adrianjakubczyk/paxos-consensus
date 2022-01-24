@@ -1,6 +1,6 @@
 package com.psk.paxos.persistance.acceptor;
 
-import com.psk.paxos.VoteType;
+import com.psk.paxos.enums.VoteType;
 import com.psk.paxos.domain.acceptor.port.AcceptorCommunicationPort;
 import com.psk.paxos.domain.acceptor.port.AcceptorGatePort;
 import com.psk.paxos.domain.client.Client;

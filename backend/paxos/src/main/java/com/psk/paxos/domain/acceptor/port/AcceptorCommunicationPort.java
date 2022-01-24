@@ -11,5 +11,7 @@ public interface AcceptorCommunicationPort {
 
   List<AcceptorResponse> findAcceptors();
 
+  AcceptorResponse findAcceptorResponseById(Integer acceptorId);
+
   void acceptedNewVote(int acceptorId, int sequenceNumber, String voteName);
 }
