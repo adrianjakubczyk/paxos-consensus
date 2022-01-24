@@ -22,11 +22,13 @@ public class CronActionService implements CronActionVoteHistoryPort {
     private final VoteRepositoryPort voteRepositoryPort;
 
     @Override
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 4000)
     public void generateVote() {
-        List<String> presentVotes = voteRepositoryPort.findAll().stream().map(Vote::getPresentVote).collect(Collectors.toList());
+        List<String> presentVotes = voteRepositoryPort.findAllHistoryVote().stream().map(Vote::getPresentVote).collect(Collectors.toList());
         List<String> votes = new ArrayList<>();
         Vote historyVote = new Vote();
+
+
         AcceptorIdsProvider.findAcceptorIds().forEach((acceptorId) -> {
             AcceptorResponse acceptorResponseModel = acceptorCommunicationPort.findAcceptorResponseById(acceptorId);
             if (Objects.nonNull(acceptorResponseModel.getPresentVotes())) {
@@ -36,12 +38,18 @@ public class CronActionService implements CronActionVoteHistoryPort {
                 historyVote.setPresentVote(acceptorResponseModel.getPresentVote());
             }
         });
-
         historyVote.setPresentVotes(votes);
         historyVote.setVoteResult(calculateVoteResult(votes));
 
-        if (!presentVotes.contains(historyVote.getPresentVote()))
+        if (Objects.isNull(historyVote.getPresentVote()))
+            return;
+
+        if (presentVotes.contains(historyVote.getPresentVote())) {
+            voteRepositoryPort.updateByVoteName(historyVote);
+        } else
             voteRepositoryPort.createNewVoteHistory(historyVote);
+
+        System.out.println(voteRepositoryPort.findAllHistoryVote());
     }
 
     private String calculateVoteResult(List<String> votes) {

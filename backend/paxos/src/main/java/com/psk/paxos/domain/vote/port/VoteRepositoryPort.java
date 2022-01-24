@@ -11,5 +11,7 @@ public interface VoteRepositoryPort {
 
   void createNewVoteHistory(Vote vote);
 
-  Collection<Vote> findAll();
+  void updateByVoteName(Vote vote);
+
+  Collection<Vote> findAllHistoryVote();
 }

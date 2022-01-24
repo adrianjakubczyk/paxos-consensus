@@ -39,6 +39,6 @@ public class PaxosController {
 
     @GetMapping("/votes")
     public Collection<Vote> getVoteHistory() {
-        return voteRepositoryPort.findAll();
+        return voteRepositoryPort.findAllHistoryVote();
     }
 }

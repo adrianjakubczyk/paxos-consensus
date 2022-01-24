@@ -43,7 +43,13 @@ public class VoteRepositoryAdapter implements VoteRepositoryPort {
     }
 
     @Override
-    public Collection<Vote> findAll() {
+    public void updateByVoteName(Vote vote) {
+      votesData.remove(vote);
+      votesData.add(vote);
+    }
+
+    @Override
+    public Collection<Vote> findAllHistoryVote() {
         return votesData;
     }
 
