@@ -7,6 +7,7 @@ import com.psk.paxos.domain.vote.port.CronActionVoteHistoryPort;
 import com.psk.paxos.domain.vote.port.VoteRepositoryPort;
 import com.psk.paxos.provider.AcceptorIdsProvider;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class CronActionService implements CronActionVoteHistoryPort {
     private final VoteRepositoryPort voteRepositoryPort;
 
     @Override
+    @Scheduled(fixedRate = 5000)
     public void generateVote() {
         List<String> presentVotes = voteRepositoryPort.findAll().stream().map(Vote::getPresentVote).collect(Collectors.toList());
         List<String> votes = new ArrayList<>();
