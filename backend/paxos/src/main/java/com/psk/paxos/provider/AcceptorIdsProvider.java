@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class AcceptorIdsProvider {
-    private static final List<Integer> acceptorIds = Arrays.asList(0, 1, 2);
+    private static final List<Integer> acceptorIds = Arrays.asList(0, 1, 2, 3, 4);
     public static final int ACCEPTORS_SIZE = acceptorIds.size();
 
     public static List<Integer> findAcceptorIds() {
