@@ -1,1 +1,15 @@
-<p>acceptor-list works!</p>
+<div class="wrap">
+    <ng-container *ngFor="let item of acceptors">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Akceptor
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Czy dostępny: {{item.isAcceptedProposeVote? 'Tak' : 'Nie'}}</li>
+                <li class="list-group-item">Głosy: {{item.presentVote}}</li>
+                <li class="list-group-item">Głosy: {{item.presentVotes}}</li>
+                <li class="list-group-item">Numer sekwencji: {{item.currentSequenceNumber}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>

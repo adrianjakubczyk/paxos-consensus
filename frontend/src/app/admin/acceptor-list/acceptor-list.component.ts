@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-acceptor-list',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acceptor-list.component.scss']
 })
 export class AcceptorListComponent implements OnInit {
-
-  constructor() { }
+  acceptors: any = []
+  constructor(
+    private adminService: AdminService
+  ) { }
 
   ngOnInit(): void {
+    this.adminService.getAcceptors().subscribe(
+      res => this.acceptors = res
+    )
   }
 
 }
