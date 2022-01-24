@@ -11,8 +11,8 @@ public class Client {
   private int clientId;
   private boolean isLeader;
   private int sequenceNumber;
-  private String problemName;
-  private List<String> problemVotes;
+  private String vote;
+  private List<String> votes;
 
   public static String getDefaultProblem(){
     return "Default problem";

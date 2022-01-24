@@ -9,6 +9,6 @@ import java.util.Collection;
 @Data
 @Builder
 public class VoteSession {
-  private String presentProblem;
+  private String presentVote;
   private Collection<String> votes;
 }

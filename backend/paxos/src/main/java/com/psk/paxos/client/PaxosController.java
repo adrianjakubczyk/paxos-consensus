@@ -26,12 +26,17 @@ public class PaxosController {
 //  }
 
   @PostMapping("/create-new-vote-session")
-  public void createNewVote(@RequestParam String voteName, @RequestParam Integer clientId) {
+  public void createNewVoteSession(@RequestParam String voteName, @RequestParam Integer clientId) {
     voteRepositoryPort.createNewVoteSession(voteName, clientId);
   }
 
   @GetMapping("/acceptors")
   public List<AcceptorResponse> getAcceptors() {
     return acceptorCommunicationPort.findAcceptors();
+  }
+
+  @PostMapping("/create-vote")
+  public void createNewVote(@RequestParam String vote, @RequestParam Integer clientId) {
+    voteRepositoryPort.createNewVote(vote, clientId);
   }
 }

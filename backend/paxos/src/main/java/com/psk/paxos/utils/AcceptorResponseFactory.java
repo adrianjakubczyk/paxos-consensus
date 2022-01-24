@@ -9,17 +9,16 @@ import java.util.Objects;
 public class AcceptorResponseFactory {
     public static AcceptorResponse buildResponse(Acceptor acceptor, VoteSession presentVoteSession, Integer prevSeq){
         if (Objects.isNull(presentVoteSession)) {
-            //todo: add error ?
          return AcceptorResponse.builder()
-                    .requestAccepted(true)
+                    .isAcceptedProposeVote(true)
                     .currentSequenceNumber(prevSeq)
                     .build();
 
         }
         return AcceptorResponse.builder()
-                .requestAccepted(true)
-                .currentProblem(presentVoteSession.getPresentProblem())
-                .currentProblemVotes(presentVoteSession.getVotes())
+                .isAcceptedProposeVote(true)
+                .presentVote(presentVoteSession.getPresentVote())
+                .presentVotes(presentVoteSession.getVotes())
                 .currentSequenceNumber(acceptor.getCurrentSequenceNumber())
                 .build();
     }

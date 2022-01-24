@@ -9,9 +9,8 @@ import java.util.List;
 @Data
 @Builder
 public class AcceptorResponse {
-  private Boolean requestAccepted;
-  private String currentProblem;
-  private Collection<String> currentProblemVotes;
+  private Boolean isAcceptedProposeVote;
+  private String presentVote;
+  private Collection<String> presentVotes;
   private Integer currentSequenceNumber;
-  private Integer currentFault;
 }

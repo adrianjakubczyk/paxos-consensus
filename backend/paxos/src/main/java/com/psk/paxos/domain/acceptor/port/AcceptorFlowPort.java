@@ -6,4 +6,6 @@ public interface AcceptorFlowPort {
   void updateVoteName(Integer acceptorId, String voteName);
 
   void acceptNewVoteSession(Integer acceptorId, Integer newSeq, String acceptedValue);
+
+  void acceptNewVote(int acceptorId, int sequenceNumber, String voteName);
 }

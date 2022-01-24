@@ -14,7 +14,6 @@ import java.util.List;
 @Builder
 public class Acceptor {
   private int acceptorId;
-  private Integer currentError;
   private Integer currentSequenceNumber;
   private List<VoteSession> votingSessions;
   private String voteName;
@@ -26,7 +25,6 @@ public class Acceptor {
   public static Acceptor createInstance(int acceptorId){
     return Acceptor.builder()
             .acceptorId(acceptorId)
-            .currentError(0)
             .currentSequenceNumber(1)
             .votingSessions(new LinkedList<>())
             .voteName("")
