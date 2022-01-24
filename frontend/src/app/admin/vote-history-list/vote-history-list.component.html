@@ -1,1 +1,14 @@
-<p>vote-history-list works!</p>
+<div class="wrap">
+    <ng-container *ngFor="let item of votes">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Głosowanie
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Nazwa: {{item.presentVote}}</li>
+                <li class="list-group-item">Głosy: {{item.presentVotes}}</li>
+                <li class="list-group-item">Wynik głosowania: {{item.voteResult}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>
