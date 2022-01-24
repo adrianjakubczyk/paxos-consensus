@@ -1,0 +1,11 @@
+.vote-form{
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px rgb(77, 174, 253) solid;
+    padding: 20px;
+    .spacer{
+        margin-top:20px;
+    }
+}

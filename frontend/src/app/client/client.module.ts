@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ClientRoutingModule } from './client-routing.module';
 import { AddVoteComponent } from './add-vote/add-vote.component';
 import { AcceptorStatusesListComponent } from './acceptor-statuses-list/acceptor-statuses-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ClientService } from './client.service';
 
 
 @NgModule({
@@ -13,7 +16,13 @@ import { AcceptorStatusesListComponent } from './acceptor-statuses-list/acceptor
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    ClientService
   ]
 })
 export class ClientModule { }

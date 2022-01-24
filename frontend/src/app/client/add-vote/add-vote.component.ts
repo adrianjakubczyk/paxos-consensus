@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../client.service';
 
 @Component({
   selector: 'app-add-vote',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-vote.component.scss']
 })
 export class AddVoteComponent implements OnInit {
-
-  constructor() { }
+  vote: string = '';
+  clientId: string = '';
+  constructor(
+    private clientService: ClientService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log('weszlo');
+    this.clientService.vote(this.vote, this.clientId).subscribe();
   }
 
 }
