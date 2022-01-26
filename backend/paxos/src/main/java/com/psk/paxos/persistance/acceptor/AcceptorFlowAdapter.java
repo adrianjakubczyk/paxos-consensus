@@ -52,6 +52,6 @@ public class AcceptorFlowAdapter implements AcceptorFlowPort {
     }
 
     private boolean isCurrentSequence(int currentSeq, Acceptor acceptor) {
-        return acceptor.getCurrentSequenceNumber().equals(currentSeq);
+        return acceptor.getCurrentSequenceNumber().equals(currentSeq) && acceptor.getCurrentError() ==0;
     }
 }

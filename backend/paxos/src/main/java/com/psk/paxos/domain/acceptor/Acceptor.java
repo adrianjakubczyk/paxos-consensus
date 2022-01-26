@@ -17,6 +17,7 @@ public class Acceptor {
   private Integer currentSequenceNumber;
   private List<VoteSession> votingSessions;
   private String voteName;
+  private Integer currentError;
 
   public VoteSession getCurrentVotingSession() {
     return votingSessions.isEmpty() ? null : votingSessions.get(votingSessions.size() - 1);
@@ -24,6 +25,7 @@ public class Acceptor {
 
   public static Acceptor createInstance(int acceptorId){
     return Acceptor.builder()
+            .currentError(0)
             .acceptorId(acceptorId)
             .currentSequenceNumber(1)
             .votingSessions(new LinkedList<>())

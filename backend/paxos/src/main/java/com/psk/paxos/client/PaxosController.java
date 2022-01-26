@@ -41,4 +41,14 @@ public class PaxosController {
     public Collection<Vote> getVoteHistory() {
         return voteRepositoryPort.findAllHistoryVote();
     }
+
+    @PostMapping("/create-error")
+    public void enableAcceptorError(@RequestParam Integer acceptorId, @RequestParam Integer errorType) {
+        acceptorCommunicationPort.createErrorOnAcceptor(acceptorId, errorType);
+    }
+
+    @PostMapping("/delete-error")
+    public void disableAcceptorError(@RequestParam Integer acceptorId) {
+        acceptorCommunicationPort.removeErrorOnAcceptor(acceptorId);
+    }
 }

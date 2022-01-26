@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @Builder
 public class AcceptorResponse {
+  private Integer currentError;
   private Boolean isAcceptedProposeVote;
   private String presentVote;
   private Collection<String> presentVotes;

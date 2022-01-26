@@ -5,13 +5,17 @@ import com.psk.paxos.domain.acceptor.AcceptorResponse;
 import java.util.List;
 
 public interface AcceptorCommunicationPort {
-  AcceptorResponse createNewVote(Integer acceptorId, String voteName, Integer seq);
+    AcceptorResponse createNewVote(Integer acceptorId, String voteName, Integer seq);
 
-  void acceptedNewProposeVote(Integer acceptorId, Integer newSeq, String acceptedValue);
+    void acceptedNewProposeVote(Integer acceptorId, Integer newSeq, String acceptedValue);
 
-  List<AcceptorResponse> findAcceptors();
+    List<AcceptorResponse> findAcceptors();
 
-  AcceptorResponse findAcceptorResponseById(Integer acceptorId);
+    AcceptorResponse findAcceptorResponseById(Integer acceptorId);
 
-  void acceptedNewVote(int acceptorId, int sequenceNumber, String voteName);
+    void acceptedNewVote(int acceptorId, int sequenceNumber, String voteName);
+
+    void createErrorOnAcceptor(Integer acceptorId, Integer errorType);
+
+    void removeErrorOnAcceptor(Integer acceptorId);
 }
