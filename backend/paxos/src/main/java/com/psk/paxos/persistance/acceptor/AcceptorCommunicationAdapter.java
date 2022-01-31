@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -76,7 +77,8 @@ public class AcceptorCommunicationAdapter implements AcceptorCommunicationPort {
         }
 
         VoteSession presentVotingSession = acceptorRepositoryPort.findPresentVotingSession(acceptorId);
-        return AcceptorResponseFactory.buildResponse(acceptor, presentVotingSession, acceptorSequenceProvider.getPreviousSeq(),errorSequenceProvider.getErrorSeq().get(0));
+        Integer firstError = acceptor.getCurrentError() == 1  ? errorSequenceProvider.getErrorSeq().get(0) : null;
+        return AcceptorResponseFactory.buildResponse(acceptor, presentVotingSession, acceptorSequenceProvider.getPreviousSeq(), firstError);
     }
 
     private AcceptorResponse acceptedResponse() {
