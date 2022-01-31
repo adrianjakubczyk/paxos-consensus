@@ -31,9 +31,6 @@ public class ClientRepositoryAdapter implements ClientRepositoryPort {
   private Collection<Client> fetchData() {
     Client c1 = Client.builder().clientId(0).sequenceNumber(0).isLeader(true).vote(Client.getDefaultProblem()).votes(Collections.EMPTY_LIST).build();
     Client c2 = Client.builder().clientId(1).sequenceNumber(0).isLeader(false).vote(Client.getDefaultProblem()).votes(Collections.EMPTY_LIST).build();
-    Client c3 = Client.builder().clientId(2).sequenceNumber(0).isLeader(false).vote(Client.getDefaultProblem()).votes(Collections.EMPTY_LIST).build();
-    Client c4 = Client.builder().clientId(3).sequenceNumber(0).isLeader(false).vote(Client.getDefaultProblem()).votes(Collections.EMPTY_LIST).build();
-    Client c5 = Client.builder().clientId(4).sequenceNumber(0).isLeader(false).vote(Client.getDefaultProblem()).votes(Collections.EMPTY_LIST).build();
-    return Arrays.asList(c1, c2, c3);
+    return Arrays.asList(c1, c2);
   }
 }
