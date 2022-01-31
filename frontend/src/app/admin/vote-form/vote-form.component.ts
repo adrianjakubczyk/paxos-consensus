@@ -8,7 +8,7 @@ import { AdminService } from '../admin.service';
 })
 export class VoteFormComponent implements OnInit {
   voteName: string = '';
-  voteClientId: string = '';
+  voteClientId: string = '1';
   constructor(
     private adminService: AdminService
   ) { }

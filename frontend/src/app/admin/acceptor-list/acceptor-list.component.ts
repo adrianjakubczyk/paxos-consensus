@@ -7,15 +7,28 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./acceptor-list.component.scss']
 })
 export class AcceptorListComponent implements OnInit {
-  acceptors: any = []
+  acceptors: any = [];
   constructor(
     private adminService: AdminService
   ) { }
 
   ngOnInit(): void {
+    this.getAcceptors();
+  }
+  getAcceptors() {
     this.adminService.getAcceptors().subscribe(
       res => this.acceptors = res
     )
+  }
+  createError(acceptorId: number, errorType: number) {
+    this.adminService.createError(acceptorId, errorType).subscribe(
+      () => this.getAcceptors()
+    );
+  }
+  deleteError(acceptorId: number) {
+    this.adminService.deleteError(acceptorId).subscribe(
+      () => this.getAcceptors()
+    );
   }
 
 }

@@ -1,1 +1,19 @@
-<p>acceptor-statuses-list works!</p>
+<div class="wrap">
+    <ng-container *ngFor="let item of acceptors; let i = index">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Akceptor
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Czy dostępny: {{item.currentError? 'Nie' : 'Tak'}}</li>
+                <li class="list-group-item">Głosowanie: {{item.presentVote}}</li>
+                <li class="list-group-item">Głosy: {{item.presentVotes}}</li>
+                <li class="list-group-item">Numer sekwencji: {{item.currentSequenceNumber}}</li>
+                <li class="list-group-item" *ngIf="item.currentError === 1">
+                    Błąd: inkrementacji sekwencji</li>
+                <li class="list-group-item" *ngIf="item.currentError === 2">
+                    Błąd: ujemnej sekwencji</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>

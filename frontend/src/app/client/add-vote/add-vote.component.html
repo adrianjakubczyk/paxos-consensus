@@ -2,12 +2,15 @@
     <form class="vote-form" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="vote">Odpowiedź</label>
-            <input [(ngModel)]="vote" class="form-control" id="vote" placeholder="Wpisz odpowiedź" name='vote' required>
+            <select [(ngModel)]="vote" class="form-control" id="vote" placeholder="Wybierzź" name='vote' required>
+                <option value="Rejected">Rejected</option>
+                <option value="Accepted">Accepted</option>
+            </select>
         </div>
         <div class="form-group spacer">
-            <label for="clientId">Id głosowaniar</label>
+            <label for="clientId">Identyfikator</label>
             <input [(ngModel)]="clientId" class="form-control" id="clientId" name='clientId'
-                placeholder="Wpisz identyfikator glosowania" required>
+                placeholder="Wpisz identyfikator" required>
         </div>
         <button type="sumbit" class="spacer btn btn-primary">Oddaj głos</button>
     </form>

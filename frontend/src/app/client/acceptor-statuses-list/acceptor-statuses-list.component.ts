@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../client.service';
 
 @Component({
   selector: 'app-acceptor-statuses-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcceptorStatusesListComponent implements OnInit {
 
-  constructor() { }
+  acceptors: any = [];
+  constructor(
+    private clientService: ClientService
+  ) { }
 
   ngOnInit(): void {
+    this.getAcceptors();
+  }
+  getAcceptors() {
+    this.clientService.getAcceptors().subscribe(
+      res => this.acceptors = res
+    )
   }
 
 }

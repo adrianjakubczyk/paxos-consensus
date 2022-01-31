@@ -22,4 +22,12 @@ export class AdminService {
   getAcceptors(): Observable<any[]> {
     return this.http.get<any[]>(`http://localhost:8080/api/acceptors`);
   }
+
+  createError(acceptorId: number, errorType: number) {
+    return this.http.post(`http://localhost:8080/api/create-error?acceptorId=${acceptorId}&errorType=${errorType}`, null)
+  }
+
+  deleteError(acceptorId: number) {
+    return this.http.post(`http://localhost:8080/api/delete-error?acceptorId=${acceptorId}`, null)
+  }
 }

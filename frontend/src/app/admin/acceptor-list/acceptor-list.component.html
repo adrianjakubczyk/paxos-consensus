@@ -1,15 +1,23 @@
 <div class="wrap">
-    <ng-container *ngFor="let item of acceptors">
+    <ng-container *ngFor="let item of acceptors; let i = index">
         <div class="card" style="width: 18rem;">
             <div class="card-header">
                 Akceptor
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Czy dostępny: {{item.isAcceptedProposeVote? 'Tak' : 'Nie'}}</li>
-                <li class="list-group-item">Głosy: {{item.presentVote}}</li>
+                <li class="list-group-item">Czy dostępny: {{item.currentError? 'Nie' : 'Tak'}}</li>
+                <li class="list-group-item">Głosowanie: {{item.presentVote}}</li>
                 <li class="list-group-item">Głosy: {{item.presentVotes}}</li>
                 <li class="list-group-item">Numer sekwencji: {{item.currentSequenceNumber}}</li>
+                <li class="list-group-item" *ngIf="item.currentError === 1">
+                    Błąd: inkrementacji sekwencji</li>
+                <li class="list-group-item" *ngIf="item.currentError === 2">
+                    Błąd: ujemnej sekwencji</li>
             </ul>
+            <br>
+            <button class="spacer btn btn-danger" (click)="createError(i, 1)">Błąd inkrementacji sekwencji</button>
+            <button class="spacer btn btn-danger" (click)="createError(i, 2)">Błąd ujemnej sekwencji</button>
+            <button class="spacer btn btn-primary" (click)="deleteError(i)">Usun błąd</button>
         </div>
     </ng-container>
 </div>
